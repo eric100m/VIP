@@ -34,6 +34,7 @@
 --green-dim:#1a7a43;
 --red-soft:#E74C3C;
 --radius:12px;
+--gap-sec:clamp(13px,2.6vw,17px);
 }
 html{scroll-behavior:smooth}
 body{
@@ -97,11 +98,11 @@ margin:0 auto;
 }
 
 /* ─── Sections ─── */
-section{padding:17px 0}
+section{padding:var(--gap-sec) 0}
 .section-title{
-font-size:24px;
+font-size:clamp(18px,4.8vw,24px);
 font-weight:600;
-margin-bottom:26px;
+margin-bottom:clamp(20px,2.9vw,26px);
 text-align:center;
 }
 .section-title span{color:var(--gold);white-space:nowrap}
@@ -770,7 +771,7 @@ margin-bottom:0;
 }
 .hook-q{
 padding-left:.52em;
-font-size:clamp(18px,3.2vw,24px);
+font-size:clamp(19px,5.2vw,24px);
 font-weight:600;
 color:var(--text);
 line-height:1.9;
@@ -1141,10 +1142,8 @@ margin-bottom:0;
 
 .checkout-alt h4 .net{color:var(--red-soft);font-weight:700;letter-spacing:.5px}
 
-.lead-title{margin-bottom:14px;line-height:1.6}
-.lead-title .nb{white-space:nowrap;color:inherit}
-@media(max-width:560px){.lead-title{font-size:20px}}
-@media(max-width:380px){.lead-title{font-size:18px}}
+@media(max-width:560px){}
+@media(max-width:380px){}
 .lead-kicker{
 text-align:center;
 font-size:17px;
@@ -1173,10 +1172,10 @@ letter-spacing:1px;
 margin-bottom:22px;
 }
 @media(max-width:560px){.method-label{font-size:14.5px;margin-bottom:18px}}
-.lead-sec{padding-bottom:17px}
+.lead-sec{padding-bottom:var(--gap-sec)}
 @media(max-width:560px){
 .hero{padding:34px 24px 18px}
-.lead-sec{padding-bottom:17px}
+.lead-sec{padding-bottom:var(--gap-sec)}
 }
 .section-sub{
 text-align:center;
@@ -1192,13 +1191,13 @@ margin:-14px auto 22px;
 .hook-ask{
 text-align:center;
 padding-left:.68em;
-font-size:18px;
+font-size:clamp(15px,4.2vw,18px);
 font-weight:700;
 letter-spacing:3px;
 color:var(--gold);
-margin-top:34px;
+margin-top:calc(var(--gap-sec) * 2);
 }
-@media(max-width:560px){.hook-ask{font-size:16px}}
+
 .section-sub b{color:var(--gold);font-weight:600}
 .discord-row{
 display:flex;
@@ -1214,10 +1213,6 @@ flex-wrap:wrap;
 @media(max-width:700px){
 .cc-br{display:none}
 .cycle-center-label{font-size:20px;letter-spacing:2px}
-}
-@media(max-width:560px){
-.hook-ask{margin-top:22px}
-.lead-sec{padding-bottom:5px}
 }
 </style>
 
