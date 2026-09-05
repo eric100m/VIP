@@ -1239,19 +1239,10 @@ flex-wrap:wrap;
 </div>
 
 <script>
-(function(){
-  var seen = false;
-  try{ seen = sessionStorage.getItem('gateSeen') === '1'; }catch(e){}
-  if(seen){
-    document.getElementById('gate').classList.add('hidden');
-  }else{
-    document.body.style.overflow = 'hidden';
-  }
-})();
+document.body.style.overflow = 'hidden';
 function closeGate(){
   document.getElementById('gate').classList.add('hidden');
   document.body.style.overflow = '';
-  try{ sessionStorage.setItem('gateSeen','1'); }catch(e){}
 }
 </script>
 
