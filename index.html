@@ -4,6 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>百万Eric · 交易社群会员</title>
+<meta name="description" content="你和交易员的差距，是心理训练和实盘训练。初阶16期基础课程、中阶12期实战课程、内部直播、1600+条实战问答、原创指标与每日数据推送。">
+<link rel="icon" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="百万Eric">
+<meta property="og:title" content="百万Eric · 交易社群会员">
+<meta property="og:description" content="一买就跌，一卖就涨？分析精准，实盘亏损？你和交易员的差距，是心理训练和实盘训练。">
+<meta property="og:url" content="https://eric100m.org/">
+<meta property="og:image" content="https://eric100m.org/images/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="百万Eric · 交易社群会员">
+<meta name="twitter:description" content="一买就跌，一卖就涨？分析精准，实盘亏损？你和交易员的差距，是心理训练和实盘训练。">
+<meta name="twitter:image" content="https://eric100m.org/images/og-cover.jpg">
+<meta name="theme-color" content="#070A12">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -12,7 +28,7 @@
 --card-border:#1A2235;
 --gold:#C9A84C;
 --gold-dim:#A8893A;
---text:#E8E8E8;
+--text:#DCE1E8;
 --text-secondary:#7A8194;
 --green:#2ECC71;
 --green-dim:#1a7a43;
@@ -32,7 +48,7 @@ line-height:1.7;
 /* ─── Hero ─── */
 .hero{
 text-align:center;
-padding:80px 24px 60px;
+padding:48px 24px 22px;
 position:relative;
 }
 .hero::after{
@@ -43,32 +59,29 @@ width:120px;height:1px;
 background:linear-gradient(90deg,transparent,var(--gold),transparent);
 }
 .hero-brand{
+--brand:clamp(40px,9vw,68px);
 display:inline-flex;
 align-items:center;
-gap:14px;
-margin-bottom:16px;
+gap:calc(var(--brand) * .30);
+margin-bottom:20px;
 }
 .hero-logo{
-width:76px;
-height:76px;
-border-radius:0;
-filter:drop-shadow(0 2px 16px rgba(201,168,76,.35));
+width:auto;
+height:calc(var(--brand) * .88);
+transform:translateY(calc(var(--brand) * .03));
+filter:drop-shadow(0 2px 18px rgba(201,168,76,.4));
 flex-shrink:0;
 }
-@media(min-width:600px){
-.hero-logo{width:92px;height:92px}
-.hero-brand{gap:22px}
-}
 .hero-brand h1{
-font-size:clamp(40px,9vw,68px);
-font-weight:800;
-letter-spacing:-1px;
 margin:0;
-background:linear-gradient(135deg,#F0DFA8 0%,var(--gold) 45%,#8A6D26 100%);
--webkit-background-clip:text;
-background-clip:text;
--webkit-text-fill-color:transparent;
-text-shadow:0 2px 30px rgba(201,168,76,.15);
+line-height:0;
+font-size:0;
+}
+.hero-brand h1 .wm{
+height:calc(var(--brand) * .95);
+width:auto;
+display:block;
+filter:drop-shadow(0 2px 30px rgba(201,168,76,.18));
 }
 .hero-tagline{
 font-size:clamp(15px,2.6vw,19px);
@@ -84,14 +97,14 @@ margin:0 auto;
 }
 
 /* ─── Sections ─── */
-section{padding:34px 0}
+section{padding:17px 0}
 .section-title{
 font-size:24px;
 font-weight:600;
 margin-bottom:26px;
 text-align:center;
 }
-.section-title span{color:var(--gold)}
+.section-title span{color:var(--gold);white-space:nowrap}
 
 /* ─── Feature blocks (core 3) ─── */
 .feature{
@@ -138,7 +151,10 @@ display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:16px;
 }
-@media(max-width:760px){.archive-grid{grid-template-columns:1fr;max-width:400px;margin:0 auto}}
+@media(max-width:760px){.archive-grid{grid-template-columns:1fr 1fr;gap:10px}
+.archive-item h3{font-size:13px;margin:10px 11px 4px}
+.archive-item p{font-size:11.5px;line-height:1.5;margin:0 11px 12px}
+.zoom-hint{font-size:11px;padding:3px 6px}}
 .archive-item{
 background:var(--card);
 border:1px solid var(--card-border);
@@ -174,7 +190,7 @@ flex:1;
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:20px;
-max-width:680px;
+max-width:760px;
 margin:0 auto;
 }
 @media(max-width:600px){.pricing-grid{grid-template-columns:1fr}}
@@ -221,6 +237,14 @@ padding:6px 0;
 padding-left:22px;
 position:relative;
 color:var(--text-secondary);
+}
+.price-includes li.scope{
+color:var(--gold);
+font-weight:700;
+font-size:15px;
+padding-bottom:10px;
+margin-bottom:4px;
+border-bottom:1px solid var(--card-border);
 }
 .price-includes li::before{
 content:"✓";
@@ -524,31 +548,24 @@ font-weight:600;
 .exchange-list{
 display:flex;
 flex-direction:column;
-gap:6px;
-margin-bottom:10px;
+gap:8px;
+margin-bottom:8px;
 }
 .ex-row{
-display:flex;
-align-items:stretch;
-gap:6px;
+background:rgba(201,168,76,.06);
+border:1px solid var(--gold-dim);
+border-radius:8px;
+padding:9px 12px;
 }
-.ex-link{
-flex:1;
+.ex-head{
 display:flex;
-align-items:center;
+align-items:baseline;
 justify-content:space-between;
 gap:8px;
-background:rgba(201,168,76,.07);
-border:1px solid var(--gold-dim);
-border-radius:6px;
-padding:9px 12px;
-text-decoration:none;
-transition:background .2s;
-min-width:0;
+margin-bottom:5px;
 }
-.ex-link:hover{background:rgba(201,168,76,.18)}
 .ex-name{
-font-size:13.5px;
+font-size:14px;
 color:var(--text);
 font-weight:600;
 white-space:nowrap;
@@ -558,32 +575,46 @@ font-size:11px;
 color:var(--green);
 white-space:nowrap;
 }
-.ex-code{
+.ex-line{
 display:flex;
 align-items:center;
-justify-content:center;
+justify-content:space-between;
+gap:10px;
+flex-wrap:wrap;
+}
+.ex-url{
 font-family:"SF Mono","Fira Code",monospace;
-font-size:11px;
+font-size:10.5px;
 color:var(--gold);
+text-decoration:none;
+word-break:break-all;
+line-height:1.5;
+flex:1 1 auto;
+min-width:0;
+}
+.ex-url:hover{text-decoration:underline}
+.ex-code{
+display:inline-flex;
+align-items:center;
+gap:6px;
+flex-shrink:0;
+margin-left:auto;
+font-family:"SF Mono","Fira Code",monospace;
+font-size:10.5px;
+color:var(--text-secondary);
 background:#0A0E18;
 border:1px solid var(--card-border);
-border-radius:6px;
-padding:0 8px;
+border-radius:5px;
+padding:3px 8px;
 cursor:pointer;
-white-space:nowrap;
 transition:border-color .2s,color .2s;
-width:104px;
-flex-shrink:0;
 }
-.ex-code:hover{border-color:var(--gold);color:#F0DFA8}
+.ex-code i{font-style:normal;font-family:inherit;color:var(--gold-dim);font-size:10px}
+.ex-code:hover{border-color:var(--gold);color:var(--gold)}
 .ex-note{
 font-size:11.5px;
 color:var(--text-secondary);
-margin-bottom:16px;
-}
-@media(max-width:420px){
-.ex-row{flex-direction:column;gap:4px}
-.ex-code{justify-content:center;padding:6px 10px}
+margin-bottom:6px;
 }
 .checkout-box{
 background:var(--card);
@@ -591,7 +622,7 @@ border:1px solid var(--gold-dim);
 border-radius:var(--radius);
 padding:28px 24px;
 margin-top:24px;
-max-width:680px;
+max-width:760px;
 margin-left:auto;
 margin-right:auto;
 }
@@ -616,7 +647,7 @@ margin-top:6px;
 .amount-note b{color:var(--gold)}
 .checkout-methods{
 display:grid;
-grid-template-columns:280px 1fr;
+grid-template-columns:200px 1fr;
 gap:28px;
 align-items:start;
 }
@@ -638,7 +669,7 @@ border:1px solid var(--card-border);
 display:block;
 font-size:12px;
 color:var(--text-secondary);
-margin-top:8px;
+margin-top:7px;
 text-align:center;
 }
 .checkout-alt h4{
@@ -735,28 +766,24 @@ line-height:1.75;
 /* ─── Method (认知闭环) ─── */
 .hooks{
 text-align:center;
-margin-bottom:34px;
+margin-bottom:0;
 }
 .hook-q{
+padding-left:.52em;
 font-size:clamp(18px,3.2vw,24px);
 font-weight:600;
 color:var(--text);
 line-height:1.9;
 opacity:.9;
 }
-.hook-q:nth-child(2){opacity:.95}
-.hook-q:nth-child(3){
-color:var(--gold);
-opacity:1;
-}
-.lead-br{display:none}
-@media(max-width:560px){.lead-br{display:inline}}
+.hook-q{opacity:.95}
+.lead-br{display:inline}
 
 .cycle{
 position:relative;
-max-width:560px;
+max-width:492px;
 margin:0 auto;
-aspect-ratio:1/0.70;
+aspect-ratio:1/0.74;
 }
 .cycle-ring{
 position:absolute;
@@ -767,14 +794,14 @@ opacity:.8;
 }
 .cycle-center{
 position:absolute;
-top:46%;left:50%;
+top:47.7%;left:50%;
 transform:translate(-50%,-50%);
 text-align:center;
 z-index:1;
 }
 .cycle-center-label{
 display:block;
-font-size:clamp(18px,3vw,25px);
+font-size:clamp(17px,2.6vw,22px);
 font-weight:700;
 line-height:1.35;
 background:linear-gradient(135deg,#F0DFA8,var(--gold));
@@ -786,12 +813,12 @@ letter-spacing:1.5px;
 
 .cycle-node{
 position:absolute;
-width:min(40%,215px);
+width:min(41%,196px);
 background:var(--card);
 border:1px solid var(--card-border);
 border-left:3px solid var(--gold);
 border-radius:9px;
-padding:13px 14px 12px;
+padding:11px 12px 10px;
 transition:border-color .3s,transform .3s;
 }
 .cycle-node:hover{transform:translateY(-2px)}
@@ -813,20 +840,20 @@ font-weight:700;
 margin-bottom:7px;
 }
 .cycle-node h3{
-font-size:14.5px;
+font-size:13.5px;
 font-weight:700;
 color:var(--gold);
 margin-bottom:8px;
 }
 .node-tag{
-font-size:11.5px;
+font-size:11px;
 color:var(--text-secondary);
 font-weight:400;
 letter-spacing:.5px;
 white-space:nowrap;
 }
 .node-desc{
-font-size:11.5px;
+font-size:11px;
 color:var(--text-secondary);
 line-height:1.6;
 }
@@ -881,119 +908,375 @@ border-radius:20px;
 .lb-next{right:8px}
 .lb-nav{width:38px;height:38px;font-size:16px}
 }
+
+/* ─── Risk gate ─── */
+.gate{
+position:fixed;
+inset:0;
+z-index:2000;
+background:rgba(4,6,11,.94);
+backdrop-filter:blur(6px);
+display:flex;
+align-items:center;
+justify-content:center;
+padding:24px;
+overflow-y:auto;
+}
+.gate.hidden{display:none}
+.gate-card{
+background:var(--card);
+border:1px solid var(--card-border);
+border-top:3px solid var(--gold);
+border-radius:var(--radius);
+max-width:560px;
+width:100%;
+padding:34px 30px 28px;
+margin:auto;
+}
+.gate-brand{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:12px;
+margin-bottom:22px;
+padding-bottom:20px;
+border-bottom:1px solid var(--card-border);
+}
+.gate-logo{
+width:auto;
+height:84px;
+filter:drop-shadow(0 2px 20px rgba(201,168,76,.35));
+}
+.gate-wm{height:36px;width:auto;display:block}
+.gate-card h2{
+font-size:21px;
+font-weight:700;
+margin-bottom:6px;
+text-align:center;
+}
+.gate-lead{text-align:center}
+.gate-lead{
+font-size:14px;
+color:var(--text-secondary);
+margin-bottom:22px;
+}
+.gate-list{list-style:none;padding:0;margin:0 0 22px}
+.gate-list li{
+position:relative;
+margin-bottom:18px;
+font-size:14px;
+line-height:1.75;
+color:var(--text-secondary);
+text-align:center;
+}
+.gate-list li:last-child{margin-bottom:0}
+
+.gate-list b{color:var(--text);font-weight:600;display:block;margin-bottom:4px}
+.gate-list .dom{color:var(--gold);font-family:"SF Mono","Fira Code",monospace;font-size:13.5px}
+.gate-kvs{display:inline-block;text-align:left}
+.gate-kv{
+display:flex;
+align-items:baseline;
+gap:10px;
+margin-top:6px;
+font-size:13.5px;
+line-height:1.6;
+}
+.gate-kv span{
+flex-shrink:0;
+color:var(--text-secondary);
+font-size:12px;
+background:rgba(255,255,255,.05);
+border-radius:4px;
+padding:1px 7px;
+}
+.gate-kv i{font-style:normal;color:var(--text);font-weight:600}
+.gate-kv .bang{font-style:normal;color:var(--red-soft)}
+.gate-neg{
+text-align:center;
+font-size:14px;
+font-weight:600;
+color:var(--red-soft);
+letter-spacing:.5px;
+margin:0 0 24px;
+}
+.gate-btn{
+display:block;
+width:100%;
+padding:14px;
+border:none;
+border-radius:8px;
+background:var(--gold);
+color:var(--bg);
+font-size:15px;
+font-weight:700;
+font-family:inherit;
+cursor:pointer;
+transition:opacity .2s;
+}
+.gate-btn:hover{opacity:.88}
+.gate-foot{
+text-align:center;
+font-size:12px;
+color:var(--text-secondary);
+margin-top:12px;
+}
+@media(max-width:560px){
+.gate-card{padding:26px 22px 24px}
+.gate-card h2{font-size:19px}
+.gate-logo{width:auto;height:66px}
+.gate-wm{height:31px}
+.gate-brand{margin-bottom:18px;padding-bottom:16px}
+}
+
+/* ─── Stages (教学体系路线图) ─── */
+.stages{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+@media(max-width:720px){.stages{grid-template-columns:1fr}}
+.stage{
+background:var(--card);
+border:1px solid var(--card-border);
+border-radius:var(--radius);
+padding:20px 18px 12px;
+}
+.stage-head{margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--card-border)}
+.stage-tag{
+display:inline-block;
+font-size:11px;
+font-weight:700;
+letter-spacing:2px;
+color:var(--gold);
+border:1px solid var(--gold-dim);
+border-radius:4px;
+padding:2px 9px;
+margin-bottom:8px;
+}
+.stage-tag.mid{color:var(--green);border-color:var(--green-dim)}
+.stage-head h3{font-size:19px;font-weight:700;margin-bottom:3px}
+.stage-head p{font-size:13px;color:var(--text-secondary)}
+.srow{
+display:flex;
+gap:12px;
+align-items:center;
+padding:10px 0;
+border-bottom:1px solid rgba(26,34,53,.6);
+cursor:pointer;
+transition:opacity .2s;
+}
+.stage .srow:last-child{border-bottom:none}
+.srow:hover{opacity:.82}
+.srow img,.srow-ph{
+width:104px;
+height:65px;
+padding:4px;
+background:#0A0E18;
+object-fit:cover;
+border-radius:6px;
+border:1px solid var(--card-border);
+flex-shrink:0;
+display:block;
+}
+.srow-ph{
+display:flex;align-items:center;justify-content:center;
+background:#0A0E18;
+color:var(--text-secondary);
+font-size:12px;
+}
+.srow-ph.live{color:var(--gold);border-color:var(--gold-dim);font-weight:600}
+.srow-txt h4{font-size:14.5px;font-weight:600;margin-bottom:3px}
+.srow-txt p{font-size:12.5px;color:var(--text-secondary);line-height:1.55}
+.srow-group{
+margin:14px 0 2px;
+padding-top:12px;
+border-top:1px solid var(--card-border);
+}
+.srow-group b{
+display:block;
+font-size:13px;
+font-weight:700;
+color:var(--gold);
+letter-spacing:.5px;
+}
+.srow-group span{font-size:12px;color:var(--text-secondary)}
+.srow.soon{cursor:default}
+.srow.soon:hover{opacity:1}
+.soon-tag{
+font-size:10.5px;
+font-weight:600;
+color:var(--text-secondary);
+background:rgba(255,255,255,.06);
+border-radius:4px;
+padding:1px 6px;
+margin-left:5px;
+vertical-align:1px;
+}
+@media(max-width:400px){
+.srow img,.srow-ph{width:86px;height:54px}
+.srow-txt h4{font-size:13.5px}
+.srow-txt p{font-size:12px}
+}
+
+/* ─── FAQ 两栏 ─── */
+.faq-cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start;max-width:100%}
+@media(max-width:720px){.faq-cols{grid-template-columns:1fr}}
+.faq-col{
+background:var(--card);
+border:1px solid var(--card-border);
+border-radius:var(--radius);
+padding:20px 18px 8px;
+}
+.faq-col-head{margin-bottom:8px;padding-bottom:14px;border-bottom:1px solid var(--card-border)}
+.faq-cols .faq-item{
+background:transparent;
+border:none;
+border-bottom:1px solid rgba(26,34,53,.7);
+border-radius:0;
+margin-bottom:0;
+}
+.faq-col .faq-item:last-child{border-bottom:none}
+.faq-cols .faq-item:hover{border-color:transparent;border-bottom-color:rgba(26,34,53,.7)}
+.faq-cols .faq-item.open{border-color:transparent;border-bottom-color:rgba(26,34,53,.7)}
+.faq-cols .faq-q{padding:14px 0;font-size:14.5px;gap:12px;align-items:flex-start;line-height:1.55}
+.faq-cols .faq-arrow{line-height:1.4}
+.faq-cols .faq-a{padding:0 0 16px;font-size:13.5px}
+
+.checkout-alt h4 .net{color:var(--red-soft);font-weight:700;letter-spacing:.5px}
+
+.lead-title{margin-bottom:14px;line-height:1.6}
+.lead-title .nb{white-space:nowrap;color:inherit}
+@media(max-width:560px){.lead-title{font-size:20px}}
+@media(max-width:380px){.lead-title{font-size:18px}}
+.lead-kicker{
+text-align:center;
+font-size:17px;
+font-weight:600;
+letter-spacing:2px;
+color:var(--gold);
+margin-bottom:0;
+}
+.lead-kicker i{
+font-style:normal;
+color:var(--gold-dim);
+margin:0 12px;
+opacity:.7;
+font-weight:400;
+}
+@media(max-width:560px){
+.lead-kicker{font-size:15px;letter-spacing:1px}
+.lead-kicker i{margin:0 7px}
+}
+.method-label{
+text-align:center;
+font-size:16px;
+font-weight:600;
+color:var(--text);
+letter-spacing:1px;
+margin-bottom:22px;
+}
+@media(max-width:560px){.method-label{font-size:14.5px;margin-bottom:18px}}
+.lead-sec{padding-bottom:17px}
+@media(max-width:560px){
+.hero{padding:34px 24px 18px}
+.lead-sec{padding-bottom:17px}
+}
+.section-sub{
+text-align:center;
+padding-left:.6em;
+color:var(--text-secondary);
+font-size:15px;
+line-height:1.9;
+max-width:620px;
+margin:-14px auto 22px;
+}
+.thesis-br{display:inline}
+@media(max-width:640px){.section-sub{font-size:14px;line-height:1.85}}
+.hook-ask{
+text-align:center;
+padding-left:.68em;
+font-size:18px;
+font-weight:700;
+letter-spacing:3px;
+color:var(--gold);
+margin-top:34px;
+}
+@media(max-width:560px){.hook-ask{font-size:16px}}
+.section-sub b{color:var(--gold);font-weight:600}
+.discord-row{
+display:flex;
+align-items:center;
+gap:14px;
+flex-wrap:wrap;
+}
+.discord-row .discord-id-hint{margin-top:0;flex:1 1 190px;min-width:0;line-height:1.6}
+@media(max-width:640px){
+.checkout-qr img{max-width:220px;margin-left:auto;margin-right:auto}
+.checkout-qr span{max-width:220px;margin-left:auto;margin-right:auto}
+}
 </style>
+
 </head>
 <body>
+
+<!-- ═══ Risk gate ═══ -->
+<div class="gate" id="gate">
+<div class="gate-card">
+<div class="gate-brand">
+<img class="gate-logo" src="images/logo-tight.png" alt="百万Eric">
+<svg class="wm gate-wm" xmlns="http://www.w3.org/2000/svg" viewBox="-14 -864.0 4232.381626248217 971.0" role="img" aria-label="百万Eric"><defs><linearGradient id="wmGate" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F0DFA8"/><stop offset="0.45" stop-color="#C9A84C"/><stop offset="1" stop-color="#8A6D26"/></linearGradient></defs><path fill="url(#wmGate)" d="M177.0 -545.0V87.0H200.0C263.0 87.0 324.0 53.0 324.0 36.0V-4.0H677.0V82.0H702.0C754.0 82.0 826.0 52.0 827.0 43.0V-494.0C848.0 -498.0 860.0 -507.0 866.0 -515.0L734.0 -619.0L667.0 -545.0H432.0C483.0 -592.0 535.0 -659.0 577.0 -725.0H924.0C939.0 -725.0 950.0 -730.0 953.0 -741.0C899.0 -786.0 810.0 -850.0 810.0 -850.0L732.0 -753.0H47.0L55.0 -725.0H398.0C397.0 -666.0 393.0 -595.0 387.0 -545.0H333.0L177.0 -606.0ZM677.0 -517.0V-299.0H324.0V-517.0ZM677.0 -32.0H324.0V-271.0H677.0ZM1034.0 -738.0 1042.0 -710.0H1327.0C1325.0 -436.0 1325.0 -165.0 1026.0 80.0L1035.0 93.0C1346.0 -52.0 1440.0 -249.0 1473.0 -468.0H1676.0C1661.0 -254.0 1636.0 -115.0 1601.0 -87.0C1590.0 -79.0 1580.0 -76.0 1562.0 -76.0C1535.0 -76.0 1453.0 -80.0 1397.0 -85.0L1396.0 -74.0C1450.0 -63.0 1493.0 -44.0 1515.0 -21.0C1534.0 -1.0 1540.0 33.0 1540.0 76.0C1619.0 76.0 1664.0 62.0 1705.0 29.0C1770.0 -22.0 1802.0 -168.0 1821.0 -442.0C1843.0 -446.0 1857.0 -453.0 1865.0 -462.0L1742.0 -569.0L1666.0 -496.0H1476.0C1485.0 -566.0 1488.0 -637.0 1490.0 -710.0H1942.0C1957.0 -710.0 1969.0 -715.0 1972.0 -726.0C1918.0 -771.0 1830.0 -837.0 1830.0 -837.0L1752.0 -738.0Z"/><path fill="url(#wmGate)" d="M2809.871611982882 -246.229272467903H2776.7253637660488C2741.2115263908704 -169.2826248216833 2717.5356348074183 -136.13637660485023 2677.2866191155495 -101.80633380884451C2621.648273894437 -56.822139800285306 2556.5395720399433 -36.697631954350925 2464.2035948644793 -36.697631954350925C2387.25694721826 -36.697631954350925 2365.9486447931527 -52.08696148359486 2365.9486447931527 -102.99012838801711V-389.4684165477889C2494.982253922967 -389.4684165477889 2543.5178316690444 -343.30042796005705 2557.723366619116 -205.98025677603422H2588.5020256776033V-606.1028245363766H2557.723366619116C2539.9664479315265 -471.150242510699 2493.798459343795 -428.533637660485 2365.9486447931527 -429.7174322396576V-704.3577746077033C2365.9486447931527 -749.3419686162625 2381.337974322397 -759.996119828816 2442.8952924393725 -759.996119828816C2635.853808844508 -759.996119828816 2693.859743223966 -719.7471041369472 2723.454607703281 -562.30242510699H2753.049472182596V-800.2451355206847H2070.0V-770.6502710413695C2151.6818259629104 -765.915092724679 2174.17392296719 -746.9743794579173 2174.17392296719 -686.6008559201141V-113.64427960057061C2174.17392296719 -52.08696148359486 2157.6007988587735 -39.06522111269615 2070.0 -29.594864479315262V0.0H2762.5198288159772ZM3354.4171184022825 -467.5988587731812C3354.4171184022825 -520.8696148359486 3314.168102710414 -559.9348359486448 3258.529757489301 -559.9348359486448C3199.3400285306707 -559.9348359486448 3154.3558345221113 -527.9723823109844 3098.7174893009987 -448.6581455064194V-545.7293009985734H2874.9803138373754V-517.3182310984308C2925.8834807417975 -510.2154636233951 2938.9052211126964 -494.8261340941512 2938.9052211126964 -447.4743509272468V-99.43874465049929C2938.9052211126964 -50.90316690442226 2927.06727532097 -37.88142653352354 2874.9803138373754 -28.411069900142653V0.0H3189.8696718972897V-28.411069900142653C3117.658202567761 -33.146248216833094 3103.4526676176893 -48.53557774607703 3103.4526676176893 -121.93084165477889V-345.6680171184023C3103.4526676176893 -407.22533523537805 3136.5989158345224 -458.1285021398003 3175.6641369472186 -458.1285021398003C3185.134493580599 -458.1285021398003 3195.788644793153 -449.841940085592 3208.8103851640517 -430.90122681883025C3231.302482168331 -398.9387731811698 3249.05940085592 -388.28462196861625 3279.8380599144084 -388.28462196861625C3323.6384593437947 -388.28462196861625 3354.4171184022825 -421.43087018544935 3354.4171184022825 -467.5988587731812ZM3668.1226818830246 0.0V-28.411069900142653C3626.689871611983 -34.330042796005706 3612.4843366619116 -50.90316690442226 3612.4843366619116 -95.88736091298145V-545.7293009985734H3385.1957774607704V-517.3182310984308C3437.2827389443655 -506.6640798858773 3447.9368901569187 -496.0099286733238 3447.9368901569187 -447.4743509272468V-99.43874465049929C3447.9368901569187 -50.90316690442226 3439.650328102711 -41.43281027104137 3385.1957774607704 -28.411069900142653V0.0ZM3619.5871041369473 -722.1146932952925C3619.5871041369473 -774.2016547788872 3579.338088445079 -813.2668758915835 3528.4349215406564 -813.2668758915835C3477.5317546362344 -813.2668758915835 3437.2827389443655 -774.2016547788872 3437.2827389443655 -722.1146932952925C3437.2827389443655 -670.0277318116975 3477.5317546362344 -630.9625106990014 3528.4349215406564 -630.9625106990014C3579.338088445079 -630.9625106990014 3619.5871041369473 -670.0277318116975 3619.5871041369473 -722.1146932952925ZM4204.381626248217 -107.72530670470756 4183.0733238231105 -129.03360912981455C4139.272924393724 -79.31423680456491 4108.4942653352355 -62.741112696148356 4059.9586875891587 -62.741112696148356C3956.9685592011415 -62.741112696148356 3891.859857346648 -165.73124108416548 3891.859857346648 -326.7273038516405C3891.859857346648 -448.6581455064194 3929.7412838801715 -523.2372039942938 3991.298601997147 -523.2372039942938C4010.239315263909 -523.2372039942938 4027.996233951498 -513.766847360913 4035.099001426534 -500.7451069900143C4041.017974322397 -490.09095577746075 4041.017974322397 -490.09095577746075 4041.017974322397 -440.3715834522111C4042.2017689015693 -381.1818544935806 4062.326276747504 -355.13837375178315 4107.310470756063 -355.13837375178315C4157.029843081313 -355.13837375178315 4187.8085021398 -383.5494436519258 4187.8085021398 -429.7174322396576C4187.8085021398 -503.1126961483595 4108.4942653352355 -559.9348359486448 4005.5041369472183 -559.9348359486448C3843.3242796005707 -559.9348359486448 3724.94482168331 -435.6364051355207 3724.94482168331 -263.9861911554922C3724.94482168331 -99.43874465049929 3830.302539229672 16.573124108416547 3978.2768616262483 16.573124108416547C4069.4290442225397 16.573124108416547 4135.721540656205 -20.124507845934378 4204.381626248217 -107.72530670470756Z"/></svg>
+</div>
+<ul class="gate-list">
+<li><b>唯一官网</b><span class="dom">www.eric100m.org</span></li>
+<li><b>Discord 唯一账户</b>
+<div class="gate-kvs">
+<div class="gate-kv"><span>显示名</span><i>百萬Eric 王老板｜唯一账户<em class="bang">！！！</em></i></div>
+<div class="gate-kv"><span>用户名</span><i class="dom">eric100m</i></div>
+</div>
+</li>
+</ul>
+<p class="gate-neg">无助理 · 无小号 · 不会主动私信你</p>
+<button class="gate-btn" onclick="closeGate()">我已了解，进入</button>
+<p class="gate-foot">本页内容仅供学习交流，不构成投资建议</p>
+</div>
+</div>
+
+<script>
+(function(){
+  var seen = false;
+  try{ seen = sessionStorage.getItem('gateSeen') === '1'; }catch(e){}
+  if(seen){
+    document.getElementById('gate').classList.add('hidden');
+  }else{
+    document.body.style.overflow = 'hidden';
+  }
+})();
+function closeGate(){
+  document.getElementById('gate').classList.add('hidden');
+  document.body.style.overflow = '';
+  try{ sessionStorage.setItem('gateSeen','1'); }catch(e){}
+}
+</script>
+
 
 <!-- ═══ Hero ═══ -->
 <header class="hero">
 <div class="hero-brand">
-<img class="hero-logo" src="images/logo.png" alt="百万Eric Logo">
-<h1>百万Eric</h1>
+<img class="hero-logo" src="images/logo-tight.png" alt="百万Eric Logo">
+<h1><svg class="wm" xmlns="http://www.w3.org/2000/svg" viewBox="-14 -864.0 4232.381626248217 971.0" role="img" aria-label="百万Eric"><defs><linearGradient id="wmHero" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F0DFA8"/><stop offset="0.45" stop-color="#C9A84C"/><stop offset="1" stop-color="#8A6D26"/></linearGradient></defs><path fill="url(#wmHero)" d="M177.0 -545.0V87.0H200.0C263.0 87.0 324.0 53.0 324.0 36.0V-4.0H677.0V82.0H702.0C754.0 82.0 826.0 52.0 827.0 43.0V-494.0C848.0 -498.0 860.0 -507.0 866.0 -515.0L734.0 -619.0L667.0 -545.0H432.0C483.0 -592.0 535.0 -659.0 577.0 -725.0H924.0C939.0 -725.0 950.0 -730.0 953.0 -741.0C899.0 -786.0 810.0 -850.0 810.0 -850.0L732.0 -753.0H47.0L55.0 -725.0H398.0C397.0 -666.0 393.0 -595.0 387.0 -545.0H333.0L177.0 -606.0ZM677.0 -517.0V-299.0H324.0V-517.0ZM677.0 -32.0H324.0V-271.0H677.0ZM1034.0 -738.0 1042.0 -710.0H1327.0C1325.0 -436.0 1325.0 -165.0 1026.0 80.0L1035.0 93.0C1346.0 -52.0 1440.0 -249.0 1473.0 -468.0H1676.0C1661.0 -254.0 1636.0 -115.0 1601.0 -87.0C1590.0 -79.0 1580.0 -76.0 1562.0 -76.0C1535.0 -76.0 1453.0 -80.0 1397.0 -85.0L1396.0 -74.0C1450.0 -63.0 1493.0 -44.0 1515.0 -21.0C1534.0 -1.0 1540.0 33.0 1540.0 76.0C1619.0 76.0 1664.0 62.0 1705.0 29.0C1770.0 -22.0 1802.0 -168.0 1821.0 -442.0C1843.0 -446.0 1857.0 -453.0 1865.0 -462.0L1742.0 -569.0L1666.0 -496.0H1476.0C1485.0 -566.0 1488.0 -637.0 1490.0 -710.0H1942.0C1957.0 -710.0 1969.0 -715.0 1972.0 -726.0C1918.0 -771.0 1830.0 -837.0 1830.0 -837.0L1752.0 -738.0Z"/><path fill="url(#wmHero)" d="M2809.871611982882 -246.229272467903H2776.7253637660488C2741.2115263908704 -169.2826248216833 2717.5356348074183 -136.13637660485023 2677.2866191155495 -101.80633380884451C2621.648273894437 -56.822139800285306 2556.5395720399433 -36.697631954350925 2464.2035948644793 -36.697631954350925C2387.25694721826 -36.697631954350925 2365.9486447931527 -52.08696148359486 2365.9486447931527 -102.99012838801711V-389.4684165477889C2494.982253922967 -389.4684165477889 2543.5178316690444 -343.30042796005705 2557.723366619116 -205.98025677603422H2588.5020256776033V-606.1028245363766H2557.723366619116C2539.9664479315265 -471.150242510699 2493.798459343795 -428.533637660485 2365.9486447931527 -429.7174322396576V-704.3577746077033C2365.9486447931527 -749.3419686162625 2381.337974322397 -759.996119828816 2442.8952924393725 -759.996119828816C2635.853808844508 -759.996119828816 2693.859743223966 -719.7471041369472 2723.454607703281 -562.30242510699H2753.049472182596V-800.2451355206847H2070.0V-770.6502710413695C2151.6818259629104 -765.915092724679 2174.17392296719 -746.9743794579173 2174.17392296719 -686.6008559201141V-113.64427960057061C2174.17392296719 -52.08696148359486 2157.6007988587735 -39.06522111269615 2070.0 -29.594864479315262V0.0H2762.5198288159772ZM3354.4171184022825 -467.5988587731812C3354.4171184022825 -520.8696148359486 3314.168102710414 -559.9348359486448 3258.529757489301 -559.9348359486448C3199.3400285306707 -559.9348359486448 3154.3558345221113 -527.9723823109844 3098.7174893009987 -448.6581455064194V-545.7293009985734H2874.9803138373754V-517.3182310984308C2925.8834807417975 -510.2154636233951 2938.9052211126964 -494.8261340941512 2938.9052211126964 -447.4743509272468V-99.43874465049929C2938.9052211126964 -50.90316690442226 2927.06727532097 -37.88142653352354 2874.9803138373754 -28.411069900142653V0.0H3189.8696718972897V-28.411069900142653C3117.658202567761 -33.146248216833094 3103.4526676176893 -48.53557774607703 3103.4526676176893 -121.93084165477889V-345.6680171184023C3103.4526676176893 -407.22533523537805 3136.5989158345224 -458.1285021398003 3175.6641369472186 -458.1285021398003C3185.134493580599 -458.1285021398003 3195.788644793153 -449.841940085592 3208.8103851640517 -430.90122681883025C3231.302482168331 -398.9387731811698 3249.05940085592 -388.28462196861625 3279.8380599144084 -388.28462196861625C3323.6384593437947 -388.28462196861625 3354.4171184022825 -421.43087018544935 3354.4171184022825 -467.5988587731812ZM3668.1226818830246 0.0V-28.411069900142653C3626.689871611983 -34.330042796005706 3612.4843366619116 -50.90316690442226 3612.4843366619116 -95.88736091298145V-545.7293009985734H3385.1957774607704V-517.3182310984308C3437.2827389443655 -506.6640798858773 3447.9368901569187 -496.0099286733238 3447.9368901569187 -447.4743509272468V-99.43874465049929C3447.9368901569187 -50.90316690442226 3439.650328102711 -41.43281027104137 3385.1957774607704 -28.411069900142653V0.0ZM3619.5871041369473 -722.1146932952925C3619.5871041369473 -774.2016547788872 3579.338088445079 -813.2668758915835 3528.4349215406564 -813.2668758915835C3477.5317546362344 -813.2668758915835 3437.2827389443655 -774.2016547788872 3437.2827389443655 -722.1146932952925C3437.2827389443655 -670.0277318116975 3477.5317546362344 -630.9625106990014 3528.4349215406564 -630.9625106990014C3579.338088445079 -630.9625106990014 3619.5871041369473 -670.0277318116975 3619.5871041369473 -722.1146932952925ZM4204.381626248217 -107.72530670470756 4183.0733238231105 -129.03360912981455C4139.272924393724 -79.31423680456491 4108.4942653352355 -62.741112696148356 4059.9586875891587 -62.741112696148356C3956.9685592011415 -62.741112696148356 3891.859857346648 -165.73124108416548 3891.859857346648 -326.7273038516405C3891.859857346648 -448.6581455064194 3929.7412838801715 -523.2372039942938 3991.298601997147 -523.2372039942938C4010.239315263909 -523.2372039942938 4027.996233951498 -513.766847360913 4035.099001426534 -500.7451069900143C4041.017974322397 -490.09095577746075 4041.017974322397 -490.09095577746075 4041.017974322397 -440.3715834522111C4042.2017689015693 -381.1818544935806 4062.326276747504 -355.13837375178315 4107.310470756063 -355.13837375178315C4157.029843081313 -355.13837375178315 4187.8085021398 -383.5494436519258 4187.8085021398 -429.7174322396576C4187.8085021398 -503.1126961483595 4108.4942653352355 -559.9348359486448 4005.5041369472183 -559.9348359486448C3843.3242796005707 -559.9348359486448 3724.94482168331 -435.6364051355207 3724.94482168331 -263.9861911554922C3724.94482168331 -99.43874465049929 3830.302539229672 16.573124108416547 3978.2768616262483 16.573124108416547C4069.4290442225397 16.573124108416547 4135.721540656205 -20.124507845934378 4204.381626248217 -107.72530670470756Z"/></svg></h1>
 </div>
 <p class="hero-tagline">统计优势为矛，风险管理为盾</p>
 </header>
 
 <!-- ═══ Method ═══ -->
-<section>
+<section class="lead-sec">
 <div class="container">
 <div class="hooks">
-<p class="hook-q">总感觉市场在针对你？</p>
+<p class="hook-q">一买就跌，一卖就涨？</p>
 <p class="hook-q">分析精准，实盘亏损？</p>
-<p class="hook-q">学的越多，亏得越多？</p>
+<p class="hook-q">反复扛单，越套越深？</p>
 </div>
-<h2 class="section-title">交易学不会，不是策略太难，<br class="lead-br">是缺了<span>心理训练</span>和<span>实盘训练</span>。</h2>
+<p class="hook-ask">怎么办？</p>
 
-<div class="cycle">
-<svg class="cycle-ring" viewBox="0 0 400 296" aria-hidden="true">
-<ellipse cx="200" cy="148" rx="150" ry="111" fill="none" stroke="var(--gold-dim)" stroke-width="1.6" stroke-dasharray="7 7"/>
-<g fill="var(--gold)">
-<path d="M0,-8 L13,0 L0,8 Z" transform="translate(329.9,92.5) rotate(52)"/>
-<path d="M0,-8 L13,0 L0,8 Z" transform="translate(200,259) rotate(180)"/>
-<path d="M0,-8 L13,0 L0,8 Z" transform="translate(70.1,92.5) rotate(308)"/>
-</g>
-</svg>
 
-<div class="cycle-center">
-<span class="cycle-center-label">三维一体<br>学交易</span>
-</div>
 
-<div class="cycle-node node-1">
-<span class="node-num">1</span>
-<h3>16期作业 <span class="node-tag">· 搭框架</span></h3>
-<p class="node-desc">从浅到深，交易基础一次学扎实。</p>
-</div>
-
-<div class="cycle-node node-2">
-<span class="node-num">2</span>
-<h3>100次实盘 <span class="node-tag">· 攒数据</span></h3>
-<p class="node-desc">从实战理解市场，改变思维和行为习惯。</p>
-</div>
-
-<div class="cycle-node node-3">
-<span class="node-num">3</span>
-<h3>10个问题 <span class="node-tag">· 对齐认知</span></h3>
-<p class="node-desc">让交易策略、市场规律、个人习惯逻辑自洽。</p>
-</div>
-</div>
-
-</div>
-</section>
-
-<!-- ═══ Content Archive ═══ -->
-<section>
-<div class="container">
-<h2 class="section-title"><span>教学体系</span></h2>
-<div class="archive-grid">
-<div class="archive-item" onclick="openLightbox('course16')">
-<div class="archive-shot">
-<img src="images/thumb-course16.jpg" alt="16期系统课程" loading="lazy">
-<span class="zoom-hint">🔍</span>
-</div>
-<h3>初阶16期基础课程</h3>
-<p>K线基础、价格形态、风险管理、指标应用，从打基础到职业交易员</p>
-</div>
-<div class="archive-item" onclick="openLightbox('psych')">
-<div class="archive-shot">
-<img src="images/thumb-psych.jpg" alt="交易心理训练" loading="lazy">
-<span class="zoom-hint">🔍</span>
-</div>
-<h3>4期交易心理画像评测</h3>
-<p>情绪画像找弱点、24题测评看进度、60题毕业考验成果</p>
-</div>
-<div class="archive-item" onclick="openLightbox('beginner')">
-<div class="archive-shot">
-<img src="images/thumb-live-beginner.jpg" alt="初阶内部直播" loading="lazy">
-<span class="zoom-hint">🔍</span>
-</div>
-<h3>初阶直播</h3>
-<p>从 TradingView 操作到交易策略，一期一个主题</p>
-</div>
-<div class="archive-item" onclick="openLightbox('advanced')">
-<div class="archive-shot">
-<img src="images/thumb-live-advanced.jpg" alt="中阶内部直播" loading="lazy">
-<span class="zoom-hint">🔍</span>
-</div>
-<h3>中阶直播 · 40+ 期</h3>
-<p>49000抄底、117790逃顶，每次行情都有完整复盘</p>
-</div>
-<div class="archive-item" onclick="openLightbox('qa')">
-<div class="archive-shot">
-<img src="images/thumb-qa-past.jpg" alt="新手问答归档" loading="lazy">
-<span class="zoom-hint">🔍</span>
-</div>
-<h3>往期问答 · 1300+ 条</h3>
-<p>2025 全年按月归档，单月最高 419 条提问，条条有回答</p>
-</div>
-<div class="archive-item" onclick="openLightbox('qa2026')">
-<div class="archive-shot">
-<img src="images/thumb-qa-2026.jpg" alt="2026年初阶问答" loading="lazy">
-<span class="zoom-hint">🔍</span>
-</div>
-<h3>今年问答 · 持续更新</h3>
-<p>2026 年至今每月一贴，单月最高 200 条提问，还有 1-5 月精华 100 题</p>
-</div>
-</div>
 </div>
 </section>
 
@@ -1031,8 +1314,110 @@ border-radius:20px;
 </div>
 </section>
 
+<!-- ═══ Content Archive ═══ -->
+<section>
+<div class="container">
+<h2 class="section-title"><span>教学体系</span></h2>
+<div class="stages">
+
+<div class="stage">
+<div class="stage-head">
+<span class="stage-tag">初阶</span>
+<h3>打基础</h3>
+<p>看懂盘面，跳出韭菜思维</p>
+</div>
+<div class="srow" onclick="openLightbox('course16')">
+<img src="images/thumb-course16.jpg" alt="初阶16期基础课程" loading="lazy">
+<div class="srow-txt"><h4>16 期基础课程</h4><p>K线基础、价格形态、风险管理、指标应用</p></div>
+</div>
+<div class="srow" onclick="openLightbox('psych')">
+<img src="images/thumb-psych.jpg" alt="初阶4期心理画像" loading="lazy">
+<div class="srow-txt"><h4>4 期心理画像</h4><p>情绪画像找弱点、24题测评看进度、60题毕业考</p></div>
+</div>
+<div class="srow" onclick="openLightbox('beginner')">
+<img src="images/thumb-live-beginner.jpg" alt="初阶内部直播" loading="lazy">
+<div class="srow-txt"><h4>8 期内部直播</h4><p>从 TradingView 操作讲到实盘复盘</p></div>
+</div>
+<div class="srow" onclick="openLightbox('qa2026')">
+<img src="images/thumb-qa-2026.jpg" alt="2026年每月问答" loading="lazy">
+<div class="srow-txt"><h4>每月问答 · 2026</h4><p>每月一贴，单月最高 200 条，另有 1-5 月精华 100 题</p></div>
+</div>
+</div>
+
+<div class="stage">
+<div class="stage-head">
+<span class="stage-tag mid">中阶</span>
+<h3>建能力</h3>
+<p>刻意训练，练出概率思维</p>
+</div>
+<div class="srow soon">
+<div class="srow-ph">剪辑中</div>
+<div class="srow-txt"><h4>12 期实战课程 <span class="soon-tag">陆续上线</span></h4><p>交易系统、价格形态、刻意训练、正式指标</p></div>
+</div>
+<div class="srow" onclick="openLightbox('live2026')">
+<img src="images/thumb-live-2026.jpg" alt="2026年内部直播" loading="lazy">
+<div class="srow-txt"><h4>2026 年内部直播 · 进行中</h4><p>一年最少 25 期，更新行情观点，讲交易技巧和交易心法</p></div>
+</div>
+<div class="srow" onclick="openLightbox('advanced')">
+<img src="images/thumb-live-advanced.jpg" alt="2025年内部直播" loading="lazy">
+<div class="srow-txt"><h4>2025 年内部直播 · 40+ 期</h4><p>全部可回看。49000抄底、117790逃顶，每次行情都有完整复盘</p></div>
+</div>
+<div class="srow" onclick="openLightbox('qa')">
+<img src="images/thumb-qa-past.jpg" alt="1300+条问答沉淀" loading="lazy">
+<div class="srow-txt"><h4>1300+ 条问答沉淀</h4><p>2025 全年按月归档，单月最高 419 条，条条有回答</p></div>
+</div>
+<div class="srow" onclick="openLightbox('push')">
+<img src="images/thumb-push-swing.jpg" alt="每天的数据推送" loading="lazy">
+<div class="srow-txt"><h4>每天的数据推送</h4><p>超买超卖、EMA 趋势、板块强弱，到点发群里，不用自己盯盘</p></div>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+
+<!-- ═══ Method · 三维一体 ═══ -->
+<section>
+<div class="container">
+<h2 class="section-title">你和交易员的差距，是<span>心理训练</span>和<span>实盘训练</span></h2>
+<p class="section-sub">同一个信号，他<b>当机立断</b>，你<b>瞻前顾后</b>。<br class="thesis-br">百万社区只做一件事：把<b>知行合一</b>，练成本能。</p>
+<div class="cycle">
+<svg class="cycle-ring" viewBox="0 0 400 296" aria-hidden="true">
+<ellipse cx="200" cy="148" rx="150" ry="111" fill="none" stroke="var(--gold-dim)" stroke-width="1.6" stroke-dasharray="7 7"/>
+<g fill="var(--gold)">
+<path d="M0,-8 L13,0 L0,8 Z" transform="translate(329.9,92.5) rotate(52)"/>
+<path d="M0,-8 L13,0 L0,8 Z" transform="translate(200,259) rotate(180)"/>
+<path d="M0,-8 L13,0 L0,8 Z" transform="translate(70.1,92.5) rotate(308)"/>
+</g>
+</svg>
+
+<div class="cycle-center">
+<span class="cycle-center-label">三维一体<br>学交易</span>
+</div>
+
+<div class="cycle-node node-1">
+<span class="node-num">1</span>
+<h3>16期作业 <span class="node-tag">· 搭框架</span></h3>
+<p class="node-desc">从浅到深，交易基础一次学扎实。</p>
+</div>
+
+<div class="cycle-node node-2">
+<span class="node-num">2</span>
+<h3>100次实盘 <span class="node-tag">· 攒数据</span></h3>
+<p class="node-desc">从实战理解市场，改变思维和行为习惯。</p>
+</div>
+
+<div class="cycle-node node-3">
+<span class="node-num">3</span>
+<h3>10个问题 <span class="node-tag">· 对齐认知</span></h3>
+<p class="node-desc">让交易策略、市场规律、个人习惯逻辑自洽。</p>
+</div>
+</div>
+</div>
+</section>
+
 <!-- ═══ Checkout ═══ -->
-<section id="payment" style="padding-top:24px">
+<section id="payment">
 <div class="container">
 <h2 class="section-title">选择你的<span>会员方案</span></h2>
 
@@ -1042,14 +1427,17 @@ border-radius:20px;
 <div class="price-amount">988 <span class="currency">USDT</span><span class="period"> /年</span></div>
 <p class="price-desc">直接付费加入，无需绑定交易所</p>
 <ul class="price-includes">
+<li class="scope">初阶 + 中阶 全部内容</li>
 <li>初阶16期基础课程</li>
-<li>中阶8期刻意训练课</li>
-<li>4期交易心理画像评测</li>
+<li>初阶4期心理画像</li>
+<li>初阶内部直播 8 期</li>
+<li>中阶12期实战课程 <span class="soon-tag">陆续上线</span></li>
+<li>中阶内部直播 40+ 期</li>
+<li>1600+ 条实战问答</li>
 <li>100单实盘训练器</li>
 <li>趋势过滤器、波段过滤器</li>
-<li>选币器（每日更新）</li>
-<li>1600条实战问答</li>
-<li>初阶直播、中阶直播 共40+期</li>
+<li>选币器：超买超卖、EMA 趋势、板块强弱</li>
+<li>会员期内，初阶与中阶新增内容同步更新</li>
 </ul>
 </div>
 <div class="price-card featured" id="card-bindref" onclick="switchPay('bindref')">
@@ -1059,35 +1447,23 @@ border-radius:20px;
 <p class="price-desc">通过任一交易所链接注册，即享优惠<br>手续费永久 8 折 · 开户送 20 USDT 福利金</p>
 <div class="exchange-list">
 <div class="ex-row">
-<a class="ex-link" href="https://www.binance.com/join?ref=NQ3KAZV1" target="_blank" rel="noopener" onclick="event.stopPropagation()">
-<span class="ex-name">币安 Binance</span>
-<span class="ex-perk">永久8折 + 20U</span>
-</a>
-<span class="ex-code" onclick="event.stopPropagation();copyCode(this,'NQ3KAZV1')" title="点击复制邀请码">NQ3KAZV1</span>
+<div class="ex-head"><span class="ex-name">币安 Binance</span><span class="ex-perk">永久8折 + 20U</span></div>
+<div class="ex-line"><a class="ex-url" href="https://www.binance.com/join?ref=NQ3KAZV1" target="_blank" rel="noopener" onclick="event.stopPropagation()">binance.com/join?ref=NQ3KAZV1</a><span class="ex-code" onclick="event.stopPropagation();copyCode(this,'NQ3KAZV1')">NQ3KAZV1<i>复制</i></span></div>
 </div>
 <div class="ex-row">
-<a class="ex-link" href="https://okx.com/join/3462429071" target="_blank" rel="noopener" onclick="event.stopPropagation()">
-<span class="ex-name">OKX</span>
-<span class="ex-perk">永久8折 + 20U</span>
-</a>
-<span class="ex-code" onclick="event.stopPropagation();copyCode(this,'3462429071')" title="点击复制邀请码">3462429071</span>
+<div class="ex-head"><span class="ex-name">OKX</span><span class="ex-perk">永久8折 + 20U</span></div>
+<div class="ex-line"><a class="ex-url" href="https://okx.com/join/3462429071" target="_blank" rel="noopener" onclick="event.stopPropagation()">okx.com/join/3462429071</a><span class="ex-code" onclick="event.stopPropagation();copyCode(this,'3462429071')">3462429071<i>复制</i></span></div>
 </div>
 <div class="ex-row">
-<a class="ex-link" href="https://partner.bybit.com/b/29359" target="_blank" rel="noopener" onclick="event.stopPropagation()">
-<span class="ex-name">Bybit</span>
-<span class="ex-perk">开户送 20U</span>
-</a>
-<span class="ex-code" onclick="event.stopPropagation();copyCode(this,'29359')" title="点击复制邀请码">29359</span>
+<div class="ex-head"><span class="ex-name">Bybit</span><span class="ex-perk">开户送 20U</span></div>
+<div class="ex-line"><a class="ex-url" href="https://partner.bybit.com/b/29359" target="_blank" rel="noopener" onclick="event.stopPropagation()">partner.bybit.com/b/29359</a><span class="ex-code" onclick="event.stopPropagation();copyCode(this,'29359')">29359<i>复制</i></span></div>
 </div>
 <div class="ex-row">
-<a class="ex-link" href="https://partner.bitget.fit/bg/vtyuvwsh" target="_blank" rel="noopener" onclick="event.stopPropagation()">
-<span class="ex-name">Bitget</span>
-<span class="ex-perk">永久8折 + 20U</span>
-</a>
-<span class="ex-code" onclick="event.stopPropagation();copyCode(this,'vtyuvwsh')" title="点击复制邀请码">vtyuvwsh</span>
+<div class="ex-head"><span class="ex-name">Bitget</span><span class="ex-perk">永久8折 + 20U</span></div>
+<div class="ex-line"><a class="ex-url" href="https://partner.bitget.fit/bg/vtyuvwsh" target="_blank" rel="noopener" onclick="event.stopPropagation()">partner.bitget.fit/bg/vtyuvwsh</a><span class="ex-code" onclick="event.stopPropagation();copyCode(this,'vtyuvwsh')">vtyuvwsh<i>复制</i></span></div>
 </div>
 </div>
-<p class="ex-note">链接直接注册，或注册时手动填写邀请码</p>
+<p class="ex-note">点链接直接注册，或注册时手动填写邀请码</p>
 
 </div>
 </div>
@@ -1100,21 +1476,20 @@ border-radius:20px;
 
 <div class="checkout-methods">
 <div class="checkout-qr">
-<h4>币安扫码支付</h4>
 <img id="qr-img" src="images/qr-988.jpg" alt="币安收款二维码">
 <span>EricWang (226724870)</span>
 </div>
 <div class="checkout-alt">
-<h4>TRC20 USDT 转账</h4>
-<div class="trc20-addr" onclick="copyAddr(this)" title="点击复制">TRXfsC36UnWoUukEhR2B3UVtLrv8NgtJ9j</div>
+<h4><span class="net">TRC20</span> USDT 转账</h4>
+<div class="trc20-addr" onclick="copyAddr(this)" title="点击复制">TAgFaHRoBbfxw32k3tSvp7t7zvBtKqz61k</div>
 <p class="copy-hint">👆 点击复制地址</p>
 <div class="checkout-final">
-<h4>付款后 → 私信开通</h4>
+<div class="discord-row">
 <div class="discord-id-box" onclick="copyDiscord()">
 <span class="discord-id-text">eric100m</span>
 <span class="discord-id-copy">复制</span>
 </div>
-<p class="discord-id-hint" id="discord-hint">Discord 搜索此用户名，发送付款截图</p>
+<p class="discord-id-hint" id="discord-hint">付款后，Discord 搜索此用户名，发送付款截图</p>
 </div>
 </div>
 </div>
@@ -1124,91 +1499,64 @@ border-radius:20px;
 </section>
 
 <!-- ═══ FAQ ═══ -->
-<section style="padding-top:20px">
+<section>
 <div class="container">
 <h2 class="section-title">加入前<span>常见问题</span></h2>
-<div class="faq-list">
-
+<div class="faq-cols">
+<div class="faq-col">
+<div class="faq-col-head"><span class="stage-tag">关于这套训练</span></div>
 <div class="faq-item" onclick="toggleFaq(this)">
-<div class="faq-q">
-<span>三维一体学交易是什么？</span>
-<span class="faq-arrow">+</span>
-</div>
+<div class="faq-q"><span>三维一体学交易是什么？</span><span class="faq-arrow">+</span></div>
 <div class="faq-a">我在美国机构做交易员的时候，新入职的人都要接受这套训练。我把核心内容做了拆解，降低了难度，零基础想学交易的人也能跟着走。</div>
 </div>
-
 <div class="faq-item" onclick="toggleFaq(this)">
-<div class="faq-q">
-<span>所有会员都要写作业吗？</span>
-<span class="faq-arrow">+</span>
+<div class="faq-q"><span>我已经亏了很多钱，这套训练能解决我反复亏损的问题吗？</span><span class="faq-arrow">+</span></div>
+<div class="faq-a">可以帮你找到并纠正反复亏损的原因，但不能承诺从此不亏。16期基础课程和100单实盘训练，会集中解决追涨杀跌、随意重仓、扛单不止损这些问题。目标不是让你每单都赢，而是不再稀里糊涂地重复亏钱。</div>
 </div>
-<div class="faq-a">交易是门手艺，光看不练学不会。16期作业搭框架，100单实盘攒数据，10个问题缝死角——三样都得做。</div>
-</div>
-
 <div class="faq-item" onclick="toggleFaq(this)">
-<div class="faq-q">
-<span>我完全没交易过，跟得上吗？</span>
-<span class="faq-arrow">+</span>
-</div>
+<div class="faq-q"><span>我完全没交易过，跟得上吗？</span><span class="faq-arrow">+</span></div>
 <div class="faq-a">可以。这套东西本来就是从零开始设计的。16期作业从K线、均线这些最基础的东西讲起，不假设你懂任何前置知识。100单实盘在模拟环境里跑，不用拿真钱试错。社群里 1600 多条问答，大部分也是新手问的——你会遇到的坑，基本都有人先踩过。<br><br>真正跟不上的不是零基础的人，是不肯下功夫的人。</div>
 </div>
-
 <div class="faq-item" onclick="toggleFaq(this)">
-<div class="faq-q">
-<span>会员期多久？有没有额外福利？</span>
-<span class="faq-arrow">+</span>
+<div class="faq-q"><span>不承诺带我赚钱，我为什么还要花钱加入？</span><span class="faq-arrow">+</span></div>
+<div class="faq-a">我不喊单、不代客理财。我会把自己在做的趋势现货和短线单子发出来，怎么想的、为什么这么做，都讲清楚。<br><br>你真正需要的，不是别人临时告诉你买什么，而是一套自己能长期用的方法。一次喊单只决定一笔交易；判断、仓位、止损和执行，才决定你能不能长期留在市场。</div>
 </div>
-<div class="faq-a">标准 365 天。换绑 OKX 或币安，直接加 90 天，一年多送三个月，总共 455 天。</div>
-</div>
-
 <div class="faq-item" onclick="toggleFaq(this)">
-<div class="faq-q">
-<span>已经在别人那注册过交易所了，怎么办？</span>
-<span class="faq-arrow">+</span>
+<div class="faq-q"><span>我只想拿指标、跟信号，为什么还要写作业、打实盘？</span><span class="faq-arrow">+</span></div>
+<div class="faq-a">指标只能提示机会，真正决定盈亏的是行情判断、仓位、止损和执行。同一个信号，有人赚有人爆仓，差别不在指标上。<br><br>基本功没补上，再好的指标也会被用成亏钱工具。所以作业和实盘训练不设特例。</div>
 </div>
+<div class="faq-item" onclick="toggleFaq(this)">
+<div class="faq-q"><span>学完以后，我能不能不依赖你，自己完成交易？</span><span class="faq-arrow">+</span></div>
+<div class="faq-a">这正是训练的目标。你要逐步做到：下单前能自己说清楚为什么进场、用多少仓位、错了在哪里止损、什么情况下离场，而不是永远等我告诉你买什么、卖什么。</div>
+</div>
+</div>
+<div class="faq-col">
+<div class="faq-col-head"><span class="stage-tag mid">关于会员和购买</span></div>
+<div class="faq-item" onclick="toggleFaq(this)">
+<div class="faq-q"><span>588/988 到底买到了什么？</span><span class="faq-arrow">+</span></div>
+<div class="faq-a">初阶和中阶的全部内容：16期基础课程、4期心理画像、100单实盘训练器、初阶和中阶的内部直播、1600+ 条实战问答，加上三个原创指标，以及每天的超买超卖、EMA 趋势、板块强弱推送。<br><br>588 和 988 的权益完全一样，区别只在于是否通过指定交易所完成绑定。</div>
+</div>
+<div class="faq-item" onclick="toggleFaq(this)">
+<div class="faq-q"><span>网上有那么多免费课程，这里到底有什么不同？</span><span class="faq-arrow">+</span></div>
+<div class="faq-a">免费内容解决的是“知道”，这里更重视“做到”。你会按照明确的顺序学习，再通过作业、实盘和复盘检验自己是否真正掌握。<br><br>你买的不是更多零散知识，而是一条能落到交易上的训练路径。</div>
+</div>
+<div class="faq-item" onclick="toggleFaq(this)">
+<div class="faq-q"><span>我没有时间全天盯盘，每天要投入多久才能跟上？</span><span class="faq-arrow">+</span></div>
+<div class="faq-a">不需要全天盯盘，建议每天稳定投入 2—3 小时，用来学习、完成作业和复盘交易。工作忙可以放慢进度，但不能跳过训练。比起短时间突击，持续练习更重要。</div>
+</div>
+<div class="faq-item" onclick="toggleFaq(this)">
+<div class="faq-q"><span>指标怎么用？需要 TradingView 会员吗？能用在美股或 A 股吗？</span><span class="faq-arrow">+</span></div>
+<div class="faq-a">加入后我给你开通指标权限，TradingView 免费版就能用。初阶直播第一期专门讲怎么添加指标和设置警报。<br><br>算法会针对不同市场重新校准，美股、A 股都能用。</div>
+</div>
+<div class="faq-item" onclick="toggleFaq(this)">
+<div class="faq-q"><span>已经在别人那注册过交易所了，怎么办？</span><span class="faq-arrow">+</span></div>
 <div class="faq-a">新开一个账号，能绑上就享 588 优惠价，绑不上就 988 直接加入。两种方式的会员权益完全一样。</div>
 </div>
-
 <div class="faq-item" onclick="toggleFaq(this)">
-<div class="faq-q">
-<span>有带单、跟单吗？</span>
-<span class="faq-arrow">+</span>
+<div class="faq-q"><span>会员期多久？付款后多久能进群？</span><span class="faq-arrow">+</span></div>
+<div class="faq-a">标准 365 天。换绑 OKX 或币安，直接加 90 天，一年多送三个月，总共 455 天。<br><br>付款后把截图私信给我，核对到账后立刻开通——所以金额记得加随机小数，方便快速找到你那笔。</div>
 </div>
-<div class="faq-a">不喊单。但我会把自己在做的趋势现货和短线单子发出来，怎么想的、为什么这么做，都讲清楚。</div>
 </div>
-
-<div class="faq-item" onclick="toggleFaq(this)">
-<div class="faq-q">
-<span>指标怎么用？需要 TradingView 会员吗？</span>
-<span class="faq-arrow">+</span>
-</div>
-<div class="faq-a">加入后我给你开通指标权限，TradingView 免费版就能用。初阶直播第一期专门讲怎么添加指标和设置警报。</div>
-</div>
-
-<div class="faq-item" onclick="toggleFaq(this)">
-<div class="faq-q">
-<span>指标能用在美股或 A 股吗？</span>
-<span class="faq-arrow">+</span>
-</div>
-<div class="faq-a">可以。算法会针对不同市场重新校准，美股、A 股都能用。</div>
-</div>
-
-<div class="faq-item" onclick="toggleFaq(this)">
-<div class="faq-q">
-<span>付款后多久能进群？</span>
-<span class="faq-arrow">+</span>
-</div>
-<div class="faq-a">把付款截图私信给我，核对到账后立刻开通。所以付款金额记得加随机小数，方便快速找到你那笔。</div>
-</div>
-
-<div class="faq-item" onclick="toggleFaq(this)">
-<div class="faq-q">
-<span>会员到期后，之前的内容还能看吗？</span>
-<span class="faq-arrow">+</span>
-</div>
-<div class="faq-a">到期后失去 Discord 会员频道权限，续费即可恢复全部内容访问。</div>
-</div>
-
 </div>
 </div>
 </section>
@@ -1235,9 +1583,9 @@ document.getElementById('qr-img').src = isStd ? qrCodes.standard : qrCodes.bindr
 switchPay('standard');
 function copyCode(el, code){
 navigator.clipboard.writeText(code).then(()=>{
-const orig = el.textContent;
+const orig = el.innerHTML;
 el.textContent = "✓ 已复制";
-setTimeout(()=>{el.textContent = orig},1500);
+setTimeout(()=>{el.innerHTML = orig},1500);
 });
 }
 function toggleFaq(el){
@@ -1247,9 +1595,10 @@ function copyDiscord(){
 navigator.clipboard.writeText('eric100m').then(()=>{
 const hint=document.getElementById('discord-hint');
 const copyBtn=document.querySelector('.discord-id-copy');
+const orig=hint.textContent;
 hint.textContent="✅ 已复制，去 Discord 搜索并私信吧";
 copyBtn.textContent="已复制";
-setTimeout(()=>{hint.textContent="👆 点击复制 Discord 用户名";copyBtn.textContent="复制"},3000);
+setTimeout(()=>{hint.textContent=orig;copyBtn.textContent="复制"},3000);
 });
 }
 function copyAddr(el){
@@ -1277,10 +1626,12 @@ const lightboxImages = {
   scanner: ["images/full-scanner-1.jpg","images/full-scanner-2.jpg","images/full-scanner-3.jpg"],
   beginner: ["images/full-live-beginner-1.jpg"],
   advanced: ["images/full-live-advanced-1.jpg"],
+  live2026: ["images/full-live-2026-1.jpg"],
   course16: ["images/full-course16-1.jpg"],
-  psych: ["images/full-psych-1.jpg"],
+  psych: ["images/full-psych-1.jpg","images/full-psych-2.jpg","images/full-psych-3.jpg"],
   qa2026: ["images/full-qa-2026-1.jpg"],
-  qa: ["images/full-qa-past-1.jpg"]
+  qa: ["images/full-qa-past-1.jpg"],
+  push: ["images/full-push-swing-1.jpg","images/full-push-ema-1.jpg","images/full-push-sector-1.jpg"]
 };
 let lbSet = [], lbIdx = 0;
 function openLightbox(key){
