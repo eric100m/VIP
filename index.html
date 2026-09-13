@@ -1219,6 +1219,22 @@ color:var(--red-soft);
 font-weight:700;
 white-space:nowrap;
 }
+.gate-note{
+max-width:760px;
+margin:18px auto 0;
+padding:13px 18px;
+background:rgba(201,168,76,.06);
+border:1px solid var(--gold-dim);
+border-radius:var(--radius);
+font-size:14px;
+line-height:1.75;
+color:var(--text-secondary);
+text-align:center;
+}
+.gate-note b{color:var(--gold);font-weight:700}
+.gate-note em,.faq-a em{font-style:normal;color:var(--red-soft);font-weight:700;white-space:nowrap}
+.faq-a b{color:var(--gold);font-weight:600}
+@media(max-width:600px){.gate-note{font-size:13px;padding:12px 14px;text-align:left}}
 </style>
 
 </head>
@@ -1467,6 +1483,10 @@ function closeGate(){
 </div>
 </div>
 
+<div class="gate-note">
+课程、直播、问答、每日推送，开通就能用。<b>正式指标要写完作业才发</b> —— 588 和 988 都一样，<em>不设特例</em>。
+</div>
+
 <div class="checkout-box">
 <div class="checkout-amount">
 应付 <strong id="pay-amount">988</strong> USDT
@@ -1522,7 +1542,7 @@ function closeGate(){
 </div>
 <div class="faq-item" onclick="toggleFaq(this)">
 <div class="faq-q"><span>我只想拿指标、跟信号，为什么还要写作业、打实盘？</span><span class="faq-arrow">+</span></div>
-<div class="faq-a">指标只能提示机会，真正决定盈亏的是行情判断、仓位、止损和执行。同一个信号，有人赚有人爆仓，差别不在指标上。<br><br>基本功没补上，再好的指标也会被用成亏钱工具。所以作业和实盘训练不设特例。</div>
+<div class="faq-a">指标只能提示机会，真正决定盈亏的是行情判断、仓位、止损和执行。同一个信号，有人赚有人爆仓，差别不在指标上。<br><br>基本功没补上，再好的指标也会被用成亏钱工具。<br><br>所以<b>正式指标要等作业写完才发</b>，588 和 988 都一样，<em>不设特例</em>。</div>
 </div>
 <div class="faq-item" onclick="toggleFaq(this)">
 <div class="faq-q"><span>学完以后，我能不能不依赖你，自己完成交易？</span><span class="faq-arrow">+</span></div>
